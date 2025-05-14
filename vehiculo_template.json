@@ -1,0 +1,38 @@
+{
+    "index_patterns": ["vehiculo-gps"],
+    "template": {
+      "settings": {
+        "number_of_shards": 1
+      },
+      "mappings": {
+        "properties": {
+          "Fecha": {
+            "type": "date",
+            "format": "yyyy-MM-dd HH:mm:ss||strict_date_optional_time"
+          },
+          "Dia": { "type": "integer" },
+          "Mes": { "type": "integer" },
+          "Anio": { "type": "integer" },
+          "Hora": { "type": "integer" },
+          "Minutos": { "type": "integer" },
+          "Latitud": { "type": "float" },
+          "Longitud": { "type": "float" },
+          "Km": { "type": "integer" },
+          "Motor": { "type": "keyword" },
+          "Direccion": { "type": "text" },
+          "Link": { "type": "keyword" },
+          "geospatial": { "type": "keyword" },
+          "Localizacion": { "type": "keyword" },
+          "location": {
+            "type": "geo_point"
+          }
+        }
+      }
+    },
+    "priority": 1,
+    "version": 1,
+    "_meta": {
+      "description": "Template para datos GPS de vehículos desde archivo CSV procesado con Logstash"
+    }
+  }
+  
